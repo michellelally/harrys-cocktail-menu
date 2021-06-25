@@ -24,10 +24,7 @@ export default function App() {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  const handleAnswerButtonClick = (answerOption, el) => {
-    
-    alert("value: ", el.target.value)
-
+  const handleAnswerButtonClick = (answerOption) => {
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion);
 
@@ -38,6 +35,10 @@ export default function App() {
     }
   };
 
+  const handleInput = (e) => {
+    alert(e.target.value);
+  }
+
   return (
     <div className='app'>
       <div className='question-section'>
@@ -45,7 +46,13 @@ export default function App() {
       </div>
       <div className='answer-section'>
         {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-          <button value={"example"} onClick={() => handleAnswerButtonClick()}  >{answerOption.answerText}</button>))}   
+          <button 
+            value={answerOption.answerText} 
+            onClick={e => {
+              handleInput(e, "value");
+              handleAnswerButtonClick();
+            }}>
+              {answerOption.answerText}</button>))}
       </div>
     </div>
   );
