@@ -24,35 +24,29 @@ export default function App() {
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
-  const handleAnswerButtonClick = (answerOption) => {
+  const handleAnswerButtonClick = (answerOption, el) => {
+    
+    alert("value: ", el.target.value)
+
     const nextQuestion = currentQuestion + 1;
     setCurrentQuestion(nextQuestion);
 
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      alert('implement cocktail list..');
+      alert('implement cocktail lists');
     }
   };
 
-  
   return (
     <div className='app'>
-      {/* HINT: replace "false" with logic to display the 
-      score when the user has answered all the questions */}
-      {false ? (
-        <div className='score-section'>You scored 1 out of {questions.length}</div>
-      ) : (
-          <>
-            <div className='question-section'>
-
-            <div className='question-text'>{questions[currentQuestion].questionText}</div>            </div>
-            <div className='answer-section'>
-              {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-                <button onClick={() => handleAnswerButtonClick()}>{answerOption.answerText}</button>              ))}
-            </div>
-          </>
-        )}
+      <div className='question-section'>
+        <div className='question-text'>{questions[currentQuestion].questionText}</div>
+      </div>
+      <div className='answer-section'>
+        {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+          <button value={"example"} onClick={() => handleAnswerButtonClick()}  >{answerOption.answerText}</button>))}   
+      </div>
     </div>
   );
 }
