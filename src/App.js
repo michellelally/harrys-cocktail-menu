@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import Footer from './components/Footer';
 
 export default function App() {
+
+  const picked = [2];
+
   const questions = [
     {
       questionText: 'PICK YOUR POISON',
@@ -35,12 +39,15 @@ export default function App() {
     }
   };
 
-  const handleInput = (e) => {
+  const handleValue = (e) => {
     alert(e.target.value);
+    picked.push(e.target.value)
+    alert(picked[0].value)
   }
 
   return (
     <div className='app'>
+      
       <div className='question-section'>
         <div className='question-text'>{questions[currentQuestion].questionText}</div>
       </div>
@@ -49,11 +56,12 @@ export default function App() {
           <button 
             value={answerOption.answerText} 
             onClick={e => {
-              handleInput(e, "value");
-              handleAnswerButtonClick();
+              handleValue(e);
+              handleAnswerButtonClick(e);
             }}>
               {answerOption.answerText}</button>))}
       </div>
+      <Footer />
     </div>
   );
 }
