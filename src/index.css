@@ -32,6 +32,19 @@ body {
   justify-content: space-evenly;
 }
 
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.footer {
+  position:absolute;
+left:0;
+bottom:0;
+right:0;
+}
 /* QUESTION/TIMER/LEFT SECTION */
 .question-section {
   width: 100%;

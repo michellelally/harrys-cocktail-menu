@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import { Link } from "react-router-dom";
 
 function Picker() {
 
-  const picked = [2];
+  const picked = [];
 
   const questions = [
     {
@@ -30,6 +29,7 @@ function Picker() {
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [complete, setComplete] = useState(false);
 
   const handleAnswerButtonClick = (answerOption) => {
     const nextQuestion = currentQuestion + 1;
@@ -38,35 +38,46 @@ function Picker() {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      alert('implement cocktail lists');
+      setComplete(true);
     }
   };
 
   const handleValue = (e) => {
-    alert(e.target.value);
-    picked.push(e.target.value)
-    alert(picked[0].value)
+    const value = e.target.value
+    picked.push(value)
+    alert(picked[0])
   }
 
   return (
     <div className='wrapper'>
-      <Header />
       <div className='app'>
-      <div className='question-section'>
-        <div className='question-text'>{questions[currentQuestion].questionText}</div>
+        {complete ? (
+          <div>
+            <button>
+              <Link class="nav-link" to="cocktails">
+                FIND MY COCKTAIL!
+                  <span class="sr-only">(current)</span>
+              </Link>
+            </button>
+          </div>
+        ) : (
+            <>
+              <div className='question-section'>
+                <div className='question-text'>{questions[currentQuestion].questionText}</div>
+              </div>
+              <div className='answer-section'>
+                {questions[currentQuestion].answerOptions.map((answerOption, index) => (
+                  <button
+                    value={answerOption.answerText}
+                    onClick={e => {
+                      handleValue(e);
+                      handleAnswerButtonClick(e);
+                    }}>
+                    {answerOption.answerText}</button>))}
+              </div>
+            </>
+          )}
       </div>
-      <div className='answer-section'>
-        {questions[currentQuestion].answerOptions.map((answerOption, index) => (
-          <button 
-            value={answerOption.answerText} 
-            onClick={e => {
-              handleValue(e);
-              handleAnswerButtonClick(e);
-            }}>
-              {answerOption.answerText}</button>))}
-      </div>
-      </div>
-      <Footer />
     </div>
   );
 }
