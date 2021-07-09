@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
+import logo from './assets/harrys.png'
+
 
 function Navigation(props) {
   return (
@@ -7,23 +9,8 @@ function Navigation(props) {
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container">
           <Link class="navbar-brand" to="/">
-            Harry's
+          <img src={logo} alt="Harrys Logo" className="logo-header"/>
           </Link>
-
-          <div>
-            <ul class="navbar-nav ml-auto">
-              <li
-                class={`nav-item  ${
-                  props.location.pathname === "/" ? "active" : ""
-                }`}
-              >
-                <Link class="nav-link" to="/">
-                  Home
-                  <span class="sr-only">(current)</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
         </div>
       </nav>
     </div>

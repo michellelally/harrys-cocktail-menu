@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 function Home(props) {
   return (
     <div className='wrapper'>
-      <Header />
-      <h3>Can't decide on what to drink?</h3>
-      <h6>Click the button below for our interactive cocktail menu</h6>
+      <h1>Can't decide on what to drink?</h1>
+      <h5>Click the button below for our interactive cocktail menu!</h5>
       <button>
       <Link class="nav-link" to="picker">
-                  Begin
+                  BEGIN
                   <span class="sr-only">(current)</span>
                 </Link>
         </button>

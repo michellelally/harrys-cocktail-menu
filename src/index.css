@@ -1,13 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Raleway', sans-serif;
 }
 * {
-  font-family: "Verdana", cursive, sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #ffffff;
   text-align: center;
 }
@@ -22,8 +20,8 @@ body {
 }
 
 .app {
-  background-color: orange;
-  width: 450px;
+  background-color: greenyellow;
+  width: 100%;
   min-height: 200px;
   height: min-content;
   border-radius: 15px;
@@ -35,8 +33,14 @@ body {
 .navbar {
   position: fixed;
   width: 100%;
+  height: 15%;
   top: 0;
   left: 0;
+}
+
+.logo-header {
+  height: 20%;
+  width: 20%;
 }
 
 .footer {
@@ -50,6 +54,8 @@ right:0;
   width: 100%;
   position: relative;
 }
+
+
 
 .question-text {
   margin-bottom: 12px;
