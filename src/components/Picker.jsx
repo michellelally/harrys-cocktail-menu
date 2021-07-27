@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import Cocktails from './Cocktails';
 
 function Picker() {
 
-  const picked = [];
+  const [arr, setArr] = useState([]);
 
   const questions = [
     {
       questionText: 'PICK YOUR POISON',
       answerOptions: [
-        { answerText: 'VODKA' },
-        { answerText: 'WHISKEY' },
-        { answerText: 'GIN' },
-        { answerText: 'RUM' },
-        { answerText: 'OTHER' },
+        { answerText: 'VODKA ' },
+        { answerText: 'WHISKEY ' },
+        { answerText: 'GIN ' },
+        { answerText: 'RUM ' },
+        { answerText: 'OTHER ' },
       ],
     },
     {
@@ -44,8 +44,7 @@ function Picker() {
 
   const handleValue = (e) => {
     const value = e.target.value
-    picked.push(value)
-    alert(picked[0])
+    setArr((oldArray) => oldArray.concat(value))
   }
 
   return (
@@ -53,12 +52,7 @@ function Picker() {
       <div className='app'>
         {complete ? (
           <div>
-            <button>
-              <Link class="nav-link" to="cocktails">
-                FIND MY COCKTAIL!
-                  <span class="sr-only">(current)</span>
-              </Link>
-            </button>
+            <Cocktails message={arr}/>
           </div>
         ) : (
             <>

@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
 }
+
 * {
   font-family: 'Raleway', sans-serif;
   color: #ffffff;
@@ -21,8 +22,9 @@ body {
 
 .app {
   background-color: greenyellow;
-  width: 100%;
+  width: 150%;
   min-height: 200px;
+  margin-left: -20%;
   height: min-content;
   border-radius: 15px;
   padding: 20px;
@@ -55,11 +57,10 @@ right:0;
   position: relative;
 }
 
-
-
 .question-text {
   margin-bottom: 12px;
   font-size: 3vh;
+  color: black;
 }
 
 /* ANSWERS/RIGHT SECTION */
@@ -67,6 +68,11 @@ right:0;
   width: 100%;
   justify-content: space-between;
   text-align: center;
+  padding-right: 7%;
+}
+
+.nav-link {
+  color: white;
 }
 
 button {
