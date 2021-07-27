@@ -21,7 +21,7 @@ body {
 }
 
 .app {
-  background-color: greenyellow;
+  background-color: #008cff;
   width: 150%;
   min-height: 200px;
   margin-left: -20%;
@@ -82,7 +82,7 @@ button {
   border-radius: 15px;
   display: flex;
   align-items: center;
-  border: 2.5px solid #008cff;
+  border: 2.5px solid greenyellow;
   cursor: pointer;
   text-align: center;
   margin: 10px;

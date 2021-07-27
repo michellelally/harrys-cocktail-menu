@@ -50,13 +50,13 @@ class ShowCocktail extends Component {
           </div>
           <div class="panel-body">
             <dl>
-              <dt>Alcohol:</dt>
+              <dt>Alcohol</dt>
               <dd>{this.state.cocktails.alcohol}</dd>
-              <dt>Description:</dt>
+              <dt>Description</dt>
               <dd>{this.state.cocktails.description}</dd>
-              <dt>Author:</dt>
+              <dt>ingredients</dt>
               <dd>{this.state.cocktails.ingredients}</dd>
-              <dt>Author:</dt>
+              <dt>Glass</dt>
               <dd>{this.state.cocktails.glass}</dd>
             </dl>
             <Link to={`/update/${this.state.key}`} class="btn btn-success">Edit</Link>&nbsp;

@@ -9,21 +9,21 @@ function Picker() {
     {
       questionText: 'PICK YOUR POISON',
       answerOptions: [
-        { answerText: 'VODKA ' },
-        { answerText: 'WHISKEY ' },
-        { answerText: 'GIN ' },
-        { answerText: 'RUM ' },
-        { answerText: 'OTHER ' },
+        { answerText: 'Vodka' },
+        { answerText: 'Whiskey' },
+        { answerText: 'Gin' },
+        { answerText: 'Rum' },
+        { answerText: 'Other' },
       ],
     },
     {
       questionText: 'PICK YOUR FLAVOUR',
       answerOptions: [
-        { answerText: 'SWEET' },
-        { answerText: 'BOOZY' },
-        { answerText: 'SOUR' },
-        { answerText: 'REFRESHING' },
-        { answerText: 'ALL' },
+        { answerText: 'Sweet' },
+        { answerText: 'Boozy' },
+        { answerText: 'Sour' },
+        { answerText: 'Refreshing' },
+        { answerText: 'All' },
       ],
     },
   ];
