@@ -48,7 +48,7 @@ function Picker() {
   }
 
   return (
-    <div className='wrapper'>
+    <div className='container'>
       <div className='app'>
         {complete ? (
           <div>

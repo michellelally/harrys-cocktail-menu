@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import logo from './assets/harrys.png'
+import logo from '../shared/assets/images/harrys.png'
 
 
 function Navigation(props) {
   return (
-    <div className="navigation">
+    <div className="navigation" style={{display: 'flex'}}>
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container">
           <Link class="navbar-brand" to="/">

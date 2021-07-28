@@ -25,7 +25,7 @@ body {
   width: 150%;
   min-height: 200px;
   margin-left: -20%;
-  height: min-content;
+  /* height: min-content; */
   border-radius: 15px;
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgb(255, 0, 221);
