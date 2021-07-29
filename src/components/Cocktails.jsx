@@ -48,7 +48,7 @@ class Cocktails extends Component {
 
     renderCards = (card, index) => {
         return (
-            <Card style={{width: '80%', margin: '1rem'}} className="bg-dark text-white" key={index}>
+            <Card style={{width: '100%', margin: '1rem'}} className="bg-dark text-white" key={index}>
                 <Card.Img src={glass} alt="Card image"/>
                 <Card.ImgOverlay>
                     <Card.Title style={{fontSize:'1.5vh', marginBottom: 'none'}}>{card.name}</Card.Title>

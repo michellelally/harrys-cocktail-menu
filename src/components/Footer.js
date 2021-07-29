@@ -9,11 +9,11 @@ class Footer extends Component {
     render() {
         return (
             <footer>
-                <ul className="site-links">
-                    <li>
+                {/* <ul className="site-links">
+                    <li> */}
                         Harrys Bar &copy; {this.state.year} 
-                    </li>
-                </ul>
+                    {/* </li>
+                </ul> */}
             </footer>
         );
     }

@@ -43,7 +43,7 @@ class ShowCocktail extends Component {
       <div class="container">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h4><Link to="/">Cocktails List</Link></h4>
+            <h4><Link to="/list">Cocktails List</Link></h4>
             <h3 class="panel-title">
               {this.state.cocktails.name}
             </h3>
@@ -54,13 +54,13 @@ class ShowCocktail extends Component {
               <dd>{this.state.cocktails.alcohol}</dd>
               <dt>Description</dt>
               <dd>{this.state.cocktails.description}</dd>
-              <dt>ingredients</dt>
+              <dt>Ingredients</dt>
               <dd>{this.state.cocktails.ingredients}</dd>
               <dt>Glass</dt>
               <dd>{this.state.cocktails.glass}</dd>
             </dl>
-            <Link to={`/update/${this.state.key}`} class="btn btn-success">Edit</Link>&nbsp;
-            <button onClick={this.delete.bind(this, this.state.key)} class="btn btn-danger">Delete</button>
+            <Link to={`/update/${this.state.key}`} className="button">Edit</Link>
+            <button className="button" onClick={this.delete.bind(this, this.state.key)}>Delete</button>
           </div>
         </div>
       </div>

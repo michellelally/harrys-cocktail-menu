@@ -52,7 +52,7 @@ function Picker() {
       <div className='app'>
         {complete ? (
           <div>
-            <Cocktails message={arr}/>
+            <Cocktails message={arr} />
           </div>
         ) : (
             <>
@@ -62,6 +62,7 @@ function Picker() {
               <div className='answer-section'>
                 {questions[currentQuestion].answerOptions.map((answerOption, index) => (
                   <button
+                    className="button"
                     value={answerOption.answerText}
                     onClick={e => {
                       handleValue(e);
