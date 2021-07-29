@@ -16,7 +16,7 @@ class List extends Component {
         const cocktails = [];
         querySnapshot.forEach((doc) => {
             const { name, alcohol, description, ingredients, glass } = doc.data();
-            cocktails   .push({
+            cocktails.push({
                 key: doc.id,
                 doc, // DocumentSnapshot
                 name,
@@ -58,7 +58,7 @@ class List extends Component {
                             </thead>
                             <tbody>
                                 {this.state.cocktails.map(cocktail =>
-                                    <tr>
+                                    <tr key={cocktail.key}>
                                         <td><Link to={`/show-cocktail/${cocktail.key}`}>{cocktail.name}</Link></td>
                                         <td>{cocktail.alcohol}</td>
                                         <td>{cocktail.description}</td>

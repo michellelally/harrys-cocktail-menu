@@ -1,0 +1,15 @@
+To do ..
+
+Get Saoirse's pics of cocktails
+
+A start again button 
+
+Change colour of footer to match logo & put in address
+
+Private route for list? 
+
+Fix not found component
+
+Update database with at least 1 of each type 
+
+Tests

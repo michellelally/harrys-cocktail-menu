@@ -81,7 +81,7 @@ class Update extends Component {
             </h3>
                     </div>
                     <div class="panel-body">
-                        <h4><Link to={`/show-cocktail/${this.state.key}`} class="btn btn-primary">Cocktails List</Link></h4>
+                        <button className="button"><Link to={`/show-cocktail/${this.state.key}`}>Cocktails List</Link></button>
                         <form onSubmit={this.onSubmit}>
                             <div class="form-group">
                                 {/* <label for="name">Name:</label> */}
@@ -103,7 +103,7 @@ class Update extends Component {
                                 {/* <label for="glass">Glass:</label> */}
                                 <input type="text" class="form-control" name="glass" value={this.state.glass} onChange={this.onChange} placeholder="Glass" />
                             </div>
-                            <button type="submit" >Submit</button>
+                            <button type="submit" className="button">Submit</button>
                         </form>
                     </div>
                 </div>
