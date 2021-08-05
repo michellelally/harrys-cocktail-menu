@@ -1,7 +1,6 @@
 import React, { Component, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import firebase from '../firebase';
-import glass from '../shared/assets/images/collins.jpeg';
 import NotFound from './NotFound';
 
 
@@ -15,6 +14,13 @@ class Cocktails extends Component {
 
         if (description === "All") {
             this.ref = firebase.firestore().collection('cocktails').where("alcohol", "==", alcohol);
+            this.ref.get().then((doc) => {
+                if (!doc.exists) {
+                    this.found = 'false'
+                } else {
+                    this.found = 'true'
+                }
+            })
         } else {
             this.ref = firebase.firestore().collection('cocktails').where("alcohol", "==", alcohol).where("description", "==", description);
             this.ref.get().then((doc) => {
@@ -57,31 +63,33 @@ class Cocktails extends Component {
 
     renderCards = (card, index) => {
         return (
-            <Card style={{ width: '100%', margin: '1rem' }} className="bg-dark text-white" key={index}>
-                <Card.Img src={glass} alt="Card image" />
+     
+            <Card style={{ width: '100%', margin: '1rem' }} className="cards bg-dark text-white" key={index}>
+                <Card.Img className="images" src={card.glass} alt="Card image" />
                 <Card.ImgOverlay>
                     <Card.Title style={{ fontSize: '2vh', marginBottom: 'none' }}>{card.name}</Card.Title>
                     <Card.Text style={{ fontSize: '1.5vh', marginBottom: 'none' }}>{card.alcohol} | {card.description}</Card.Text>
                     <Card.Text style={{ fontSize: '1.5vh' }}>{card.ingredients}</Card.Text>
                 </Card.ImgOverlay>
             </Card>
+       
         );
     }
 
     render() {
         return (
-            <div>
-                {this.found ? (
-                    <div style={{ display: 'flex' }}>
-                        {this.state.cocktails.map(this.renderCards)}
-                    </div>
-                ) : (
-                        <NotFound />
-                    )}
-            </div>
-            // <div style={{ display: 'flex' }}>
-            //     {this.state.cocktails.map(this.renderCards)}
+            // <div>
+            //     {this.found ? (
+            //         <div style={{ display: 'flex' }}>
+            //             {this.state.cocktails.map(this.renderCards)}
+            //         </div>
+            //     ) : (
+            //             <NotFound />
+            //         )}
             // </div>
+            <div style={{ display: 'flex' }}>
+                {this.state.cocktails.map(this.renderCards)}
+            </div>
 
         );
     }

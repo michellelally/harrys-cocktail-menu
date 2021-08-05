@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import logo from '../shared/assets/images/harrys.png'
+import logo from '../shared/harrys.png'
 
 
 function Navigation(props) {

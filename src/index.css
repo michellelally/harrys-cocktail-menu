@@ -21,14 +21,14 @@ body {
 }
 
 .app {
-  background-color: #008cff;
+  background-color: #343a40;
   width: 150%;
   min-height: 200px;
   margin-left: -20%;
   height: min-content;
   border-radius: 15px;
   padding: 20px;
-  box-shadow: 10px 10px 42px 0px rgb(255, 0, 221);
+  box-shadow: 10px 10px 42px 0px #cb186f;
   justify-content: space-evenly;
 }
 
@@ -51,7 +51,7 @@ body {
   bottom:0;
   left: 0;
   right: 0;
-  background-color: orangered;
+  background-color: #6dcadf;
 }
 
 .question-section {
@@ -62,7 +62,7 @@ body {
 .question-text {
   margin-bottom: 12px;
   font-size: 3vh;
-  color: black;
+  color: #ffffff;
 }
 
 /* ANSWERS/RIGHT SECTION */
@@ -84,7 +84,7 @@ body {
   border-radius: 15px;
   display: flex;
   align-items: center;
-  border: 2.5px solid greenyellow;
+  border: 2.5px solid #6dcadf;
   cursor: pointer;
   text-align: center;
   margin: 10px;
@@ -109,4 +109,8 @@ button:focus {
 
 button svg {
   margin-right: 5px;
+}
+
+.images {
+  max-height: 10%;
 }

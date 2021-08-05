@@ -11,9 +11,16 @@ class Footer extends Component {
             <footer>
                 {/* <ul className="site-links">
                     <li> */}
-                        Harrys Bar &copy; {this.state.year} 
-                    {/* </li>
+                        Harrys Bar &copy; {this.state.year}
+                {/* </li>
                 </ul> */}
+                <br></br>
+                {/* <div className="socials">
+                    <img src="https://img.icons8.com/material-rounded/50/000000/facebook.png" />
+                    <img src="https://img.icons8.com/ios-glyphs/50/000000/instagram-circle.png" />
+                    <img src="https://img.icons8.com/material-rounded/24/000000/twitter.png" />
+                </div> */}
+
             </footer>
         );
     }
