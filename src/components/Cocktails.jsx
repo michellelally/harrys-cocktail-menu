@@ -1,41 +1,65 @@
 import React, { Component, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import firebase from '../firebase';
-import NotFound from './NotFound';
+import NotFound from './NotFound'
+import { Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 class Cocktails extends Component {
+
 
     constructor(props) {
         super(props);
         var alcohol = props.message[0];
         var description = props.message[1];
         var found = 'true';
+        var size = 1;
+
 
         if (description === "All") {
             this.ref = firebase.firestore().collection('cocktails').where("alcohol", "==", alcohol);
-            this.ref.get().then((doc) => {
-                if (!doc.exists) {
-                    this.found = 'false'
-                } else {
-                    this.found = 'true'
-                }
-            })
         } else {
             this.ref = firebase.firestore().collection('cocktails').where("alcohol", "==", alcohol).where("description", "==", description);
-            this.ref.get().then((doc) => {
-                if (!doc.exists) {
-                    this.found = 'false'
-                } else {
-                    this.found = 'true'
-                }
-            })
+
+            //     this.ref = firebase.firestore().collection('cocktails').where("name", "==", "Not Found");
+            // }
+            // if (this.ref.empty) {
+            //     alert("not found")
+            // }
+
+            // const snapshot = this.ref
+            // //firebase.firestore.collection('cocktails').where("alcohol", "==", alcohol).where("description", "==", description);
+            // if (snapshot.empty) {
+            //     alert("not found")
+            // }
+
+            // if (this.ref.empty){
+            //     alert("not found")
+            // }
         }
 
         this.unsubscribe = null;
         this.state = {
             cocktails: []
         };
+    }
+
+    state = {
+        redirect: false
+    }
+
+    setRedirect = () => {
+        this.setState({
+            redirect: true
+        })
+    }
+
+    renderRedirect = () => {
+        if (this.state.redirect) {
+            return <Redirect to='/target' />
+        }
     }
 
     onCollectionUpdate = (querySnapshot) => {
@@ -62,33 +86,37 @@ class Cocktails extends Component {
     }
 
     renderCards = (card, index) => {
+
         return (
-     
-            <Card style={{ width: '100%', margin: '1rem' }} className="cards bg-dark text-white" key={index}>
-                <Card.Img className="images" src={card.glass} alt="Card image" />
-                <Card.ImgOverlay>
-                    <Card.Title style={{ fontSize: '2vh', marginBottom: 'none' }}>{card.name}</Card.Title>
-                    <Card.Text style={{ fontSize: '1.5vh', marginBottom: 'none' }}>{card.alcohol} | {card.description}</Card.Text>
-                    <Card.Text style={{ fontSize: '1.5vh' }}>{card.ingredients}</Card.Text>
+
+            <Card style={{ width: '100%', margin: '1.5%' }} className="cards bg-dark text-white" key={index}>
+                <Card.Img className="images" src={card.glass} alt="Glass" />
+                <Card.ImgOverlay className="overlay">
+                    <Card.Title style={{ fontSize: '1.5vw', marginBottom: '0.12rem' }}>{card.name}</Card.Title>
+                    <Card.Text style={{ fontSize: '1.1vw', marginBottom: '0.12rem' }}>{card.alcohol} ✧ {card.description}</Card.Text>
+                    <Card.Text style={{ fontSize: '1vw' }}>{card.ingredients}</Card.Text>
                 </Card.ImgOverlay>
             </Card>
-       
+
         );
     }
 
     render() {
+        // if (this.size==0) {
+        //     
+        //     return <Redirect to='/not-found' />
+        // }
+        // if (!this.found) {
+        //     
+        //     return <Redirect to='/not-found' />
+        // }
+
         return (
-            // <div>
-            //     {this.found ? (
-            //         <div style={{ display: 'flex' }}>
-            //             {this.state.cocktails.map(this.renderCards)}
-            //         </div>
-            //     ) : (
-            //             <NotFound />
-            //         )}
-            // </div>
-            <div style={{ display: 'flex' }}>
-                {this.state.cocktails.map(this.renderCards)}
+            <div>
+                <div style={{ display: 'flex' }}>
+                    {this.state.cocktails.map(this.renderCards)}
+                </div>
+                <button className="button"><Link to={'/'}>GO AGAIN!</Link></button>
             </div>
 
         );
