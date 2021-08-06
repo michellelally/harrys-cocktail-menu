@@ -23,10 +23,22 @@ body {
 .app {
   background-color: #343a40;
   width: 150%;
-  min-height: 30%;
   margin-left: -25%;
   height: min-content;
   border-radius: 15px;
+  padding: 5%;
+  box-shadow: 10px 10px 42px 0px #cb186f;
+  justify-content: space-evenly;
+}
+
+
+.app {
+  background-color: #343a40;
+  width: 150%;
+  min-height: 30%;
+  margin-left: -25%;
+  height: min-content;
+  border-radius: 8px;
   padding: 5%;
   box-shadow: 10px 10px 42px 0px #cb186f;
   justify-content: space-evenly;
@@ -38,6 +50,7 @@ body {
   width: 100%;
   top: 0;
   left: 0;
+  margin-bottom: 10%;
 }
 
 .logo-header {
@@ -45,10 +58,10 @@ body {
 }
 
 .center {
-  display: block;
   margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
-
 
 .footer {
   position: fixed;
@@ -56,6 +69,7 @@ body {
   left: 0;
   right: 0;
   background-color: #6dcadf;
+  font-size: 1.5vw;
 }
 
 .question-section {
@@ -64,7 +78,6 @@ body {
 }
 
 .question-text {
-  margin-bottom: 12px;
   font-size: 3vh;
   color: #ffffff;
 }
@@ -74,7 +87,6 @@ body {
   width: 100%;
   justify-content: space-between;
   text-align: center;
-  padding-right: 7%;
 }
 
 .nav-link {
@@ -88,29 +100,31 @@ a {
 
 a:hover {
   color: #ffffff;
-  text-decoration: none; 
 }
 
+
 .button {
-  width: 100%;
+  width: 85%;
   color: #ffffff;
   background-color: #252525;
-  border-radius: 15px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
-  border: 2.5px solid #6dcadf;
+  border: 1.25px solid #ff5400;
   cursor: pointer;
   text-align: center;
-  margin: 10px;
-  padding: 10px;
+  padding: 3%;
   flex-direction: column;
   font-size: 2vh;
   text-decoration: none;
+  margin: 2% auto;
 }
 
 input {
   background-color: #252525;
-  border-radius: 15px;
+  border-radius: 8px;
+  padding: 1%;
+  margin: 1.25%;
 }
 
 button:hover {
@@ -126,7 +140,7 @@ button svg {
 }
 
 .images {
-  height: 23vw;
+  height: 24vw;
   width: 100%;
 }
 
@@ -135,6 +149,7 @@ button svg {
   margin: 0;
   position: absolute;
   top: 50%;
-  -ms-transform: translateY(-65%);
-  transform: translateY(-65%);
+  -ms-transform: translateY(-70%);
+  transform: translateY(-70%);
 }
+

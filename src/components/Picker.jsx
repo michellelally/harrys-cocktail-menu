@@ -51,7 +51,7 @@ function Picker() {
     <div className='container'>
       <div className='app'>
         {complete ? (
-          <div>
+          <div className="center">
             <Cocktails message={arr} />
           </div>
         ) : (

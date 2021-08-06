@@ -13,9 +13,6 @@ class Footer extends Component {
             <footer>
                 <div style={{color: '#252525'}}>
                     Harrys Bar &copy; {this.state.year}
-                    <Link to="/login" style={{ float: "right", texrDecoration: 'none' , color: 'black'}}>
-                        Admin
-                </Link>
                 </div>
                 {/* <div className="socials">
                     <img src="https://img.icons8.com/material-rounded/50/000000/facebook.png" />

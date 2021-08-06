@@ -92,7 +92,7 @@ class Cocktails extends Component {
             <Card style={{ width: '100%', margin: '1.5%' }} className="cards bg-dark text-white" key={index}>
                 <Card.Img className="images" src={card.glass} alt="Glass" />
                 <Card.ImgOverlay className="overlay">
-                    <Card.Title style={{ fontSize: '1.5vw', marginBottom: '0.12rem' }}>{card.name}</Card.Title>
+                    <Card.Title style={{ fontSize: '1.5vw', marginBottom: '0.12rem' , fontWeight: 'bold'}}>{card.name}</Card.Title>
                     <Card.Text style={{ fontSize: '1.1vw', marginBottom: '0.12rem' }}>{card.alcohol} ✧ {card.description}</Card.Text>
                     <Card.Text style={{ fontSize: '1vw' }}>{card.ingredients}</Card.Text>
                 </Card.ImgOverlay>
@@ -116,7 +116,7 @@ class Cocktails extends Component {
                 <div style={{ display: 'flex' }}>
                     {this.state.cocktails.map(this.renderCards)}
                 </div>
-                <button className="button"><Link to={'/'}>GO AGAIN!</Link></button>
+                <button className="button"><Link to={'/'}>GO AGAIN</Link></button>
             </div>
 
         );

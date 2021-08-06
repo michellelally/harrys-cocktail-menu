@@ -1,8 +1,5 @@
 To do ..
 
-
-A start again button 
-
 Private route for list? 
 
 Fix not found component

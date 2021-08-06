@@ -22,7 +22,6 @@ const SignIn = () => {
 
     const signIn = e => {
         e.preventDefault();
-        alert(email);
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // Signed in
@@ -45,9 +44,9 @@ const SignIn = () => {
 
     return (
         <div className='container'>
+            <br></br> <br></br> <br></br> <br></br> <br></br>
             {loggedIn ? (
                 <div>
-                    <br></br> <br></br> <br></br> <br></br> <br></br>
                     <button className="button" onClick={signOut}> Log out </button>
                     <List />
                 </div>

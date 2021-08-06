@@ -37,7 +37,7 @@ class List extends Component {
 
     render() {
         return (
-            <div class="container">
+            <div class="container" style={{marginTop: '20%'}}>
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
