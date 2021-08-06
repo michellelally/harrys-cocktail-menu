@@ -71,6 +71,9 @@ class Create extends Component {
                                 <input type="text" name="description" value={description} onChange={this.onChange} placeholder="Description" cols="80" rows="3" required/>
                             </div>
                             <div class="form-group">
+                                <textarea name="ingredients" value={ingredients} onChange={this.onChange} placeholder="Ingredients" cols="80" rows="3" required>{ingredients}</textarea>
+                            </div>
+                            <div class="form-group">
                                 <input type="text"  name="glass" value={glass} onChange={this.onChange} placeholder="Glass" required/>
                             </div>
                             <button type="submit" className="button">Submit</button>

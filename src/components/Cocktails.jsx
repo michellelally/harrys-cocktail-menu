@@ -23,21 +23,15 @@ class Cocktails extends Component {
         } else {
             this.ref = firebase.firestore().collection('cocktails').where("alcohol", "==", alcohol).where("description", "==", description);
 
-            //     this.ref = firebase.firestore().collection('cocktails').where("name", "==", "Not Found");
-            // }
-            // if (this.ref.empty) {
-            //     alert("not found")
-            // }
+            this.ref.get().then(snap => {
+                size = snap.size;
 
-            // const snapshot = this.ref
-            // //firebase.firestore.collection('cocktails').where("alcohol", "==", alcohol).where("description", "==", description);
-            // if (snapshot.empty) {
-            //     alert("not found")
-            // }
-
-            // if (this.ref.empty){
-            //     alert("not found")
-            // }
+                if (size > 0) {
+                    console.log("found");
+                } else {
+                    this.ref = firebase.firestore().collection('cocktails').where("name", "==", "Not Found");
+                }
+            })
         }
 
         this.unsubscribe = null;
@@ -92,7 +86,7 @@ class Cocktails extends Component {
             <Card style={{ width: '100%', margin: '1.5%' }} className="cards bg-dark text-white" key={index}>
                 <Card.Img className="images" src={card.glass} alt="Glass" />
                 <Card.ImgOverlay className="overlay">
-                    <Card.Title style={{ fontSize: '1.5vw', marginBottom: '0.12rem' , fontWeight: 'bold'}}>{card.name}</Card.Title>
+                    <Card.Title style={{ fontSize: '1.5vw', marginBottom: '0.12rem', fontWeight: 'bold' }}>{card.name}</Card.Title>
                     <Card.Text style={{ fontSize: '1.1vw', marginBottom: '0.12rem' }}>{card.alcohol} ✧ {card.description}</Card.Text>
                     <Card.Text style={{ fontSize: '1vw' }}>{card.ingredients}</Card.Text>
                 </Card.ImgOverlay>

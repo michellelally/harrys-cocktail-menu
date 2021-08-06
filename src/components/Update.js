@@ -84,24 +84,19 @@ class Update extends Component {
                         <button className="button"><Link to={`/show-cocktail/${this.state.key}`}>Cocktails List</Link></button>
                         <form onSubmit={this.onSubmit}>
                             <div class="form-group">
-                                {/* <label for="name">Name:</label> */}
-                                <input type="text" class="form-control" name="name" value={this.state.name} onChange={this.onChange} placeholder="Name" required/>
+                                <input type="text"  name="name" value={this.state.name} onChange={this.onChange} placeholder="Name" required/>
                             </div>
                             <div class="form-group">
-                                {/* <label for="alcohol">Alcohol:</label> */}
-                                <input type="text" class="form-control" name="alcohol" value={this.state.alcohol} onChange={this.onChange} placeholder="Alcohol" required/>
+                                <input type="text"  name="alcohol" value={this.state.alcohol} onChange={this.onChange} placeholder="Alcohol" required/>
                             </div>
                             <div class="form-group">
-                                {/* <label for="description">Description:</label> */}
-                                <input class="form-control" name="description" value={this.state.description} onChange={this.onChange} placeholder="Description" cols="80" rows="3" required/>
+                                <input  name="description" value={this.state.description} onChange={this.onChange} placeholder="Description" cols="80" rows="3" required/>
                             </div>
                             <div class="form-group">
-                                {/* <label for="ingredients">Ingredients:</label> */}
-                                <textarea class="form-control" name="ingredients" value={this.state.ingredients} onChange={this.onChange} placeholder="Ingredients" cols="80" rows="3" required>{this.state.ingredients}</textarea>
+                                <textarea  name="ingredients" value={this.state.ingredients} onChange={this.onChange} placeholder="Ingredients" cols="80" rows="3" required>{this.state.ingredients}</textarea>
                             </div>
                             <div class="form-group">
-                                {/* <label for="glass">Glass:</label> */}
-                                <input type="text" class="form-control" name="glass" value={this.state.glass} onChange={this.onChange} placeholder="Glass" required/>
+                                <input type="text"  name="glass" value={this.state.glass} onChange={this.onChange} placeholder="Glass" required/>
                             </div>
                             <button type="submit" className="button">Submit</button>
                         </form>
