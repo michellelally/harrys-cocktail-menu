@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-
+// this was supposed to be used to inform the user there was no cocktail that matched their preferences 
 function NotFound() {
 
   return (

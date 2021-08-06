@@ -42,6 +42,8 @@ body {
   padding: 5%;
   box-shadow: 10px 10px 42px 0px #cb186f;
   justify-content: space-evenly;
+  margin-top: 10%;
+
 }
 
 .navbar {
@@ -117,7 +119,7 @@ a:hover {
   flex-direction: column;
   font-size: 2vh;
   text-decoration: none;
-  margin: 2% auto;
+  margin: 3% auto;
 }
 
 input, textarea {
