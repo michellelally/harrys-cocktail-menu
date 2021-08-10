@@ -4,6 +4,10 @@ import { auth } from '../firebase';
 import List from './List'
 
 // this is responsible for authenticating the user so they can log
+
+// to log in: 
+// email: admin@harrys.ie
+// password: h@77wlgc
 const SignIn = () => {
     // here i used code from these tutorials: 
     // https://javascript.plainenglish.io/create-a-simple-authentication-form-with-react-and-firebase-f29f723b341c
