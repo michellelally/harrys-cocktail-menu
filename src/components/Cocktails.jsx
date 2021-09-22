@@ -1,8 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
 import firebase from '../firebase';
-import NotFound from './NotFound'
-import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 // This component is responsible for querying the database and returning the items that match the request

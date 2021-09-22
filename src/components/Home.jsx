@@ -1,4 +1,4 @@
-import { BrowserRouter, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // this is the landing page, greets the customer and display 
 function Home(props) {

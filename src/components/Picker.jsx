@@ -8,7 +8,6 @@ function Picker() {
 
   // variables
   const [arr, setArr] = useState([]);
-  const testArr = { 0: "Vodka", 1: "Sweet" };
 
   // array of questions
   // this stores the different types of alcohol and flavour descriptions that the user can choose from

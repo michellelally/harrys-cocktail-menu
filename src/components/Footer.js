@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link, withRouter } from "react-router-dom";
 
 // this component creates a footer which is displayed on each page 
 class Footer extends Component {

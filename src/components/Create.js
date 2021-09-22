@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import firebase from '../firebase';
 import { Link } from 'react-router-dom';
 

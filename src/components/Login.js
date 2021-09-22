@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import firebase from '../firebase';
-import { auth } from '../firebase';
 import List from './List'
 
 // this is responsible for authenticating the user so they can log
@@ -22,16 +21,16 @@ const SignIn = () => {
     const [errorMsg, setErrorMsg] = useState('');
 
     // deals with changes the user makes whule inputting the details 
-    const onChangeHandler = (event) => {
-        const { name, value } = event.currentTarget;
+    // const onChangeHandler = (event) => {
+    //     const { name, value } = event.currentTarget;
 
-        if (name === 'userEmail') {
-            setEmail(value);
-        }
-        else if (name === 'userPassword') {
-            setPassword(value);
-        }
-    };
+    //     if (name === 'userEmail') {
+    //         setEmail(value);
+    //     }
+    //     else if (name === 'userPassword') {
+    //         setPassword(value);
+    //     }
+    // };
 
     // signs in using firebase authentication 
     const signIn = e => {
@@ -41,7 +40,7 @@ const SignIn = () => {
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
                 // Signed in
-                var user = userCredential.user;
+                // var user = userCredential.user;
                 // if user logs in set loggedIn to true
                 setLoggedIn(true);
             })
