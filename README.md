@@ -1,5 +1,3 @@
-![NCI Logo](https://www.ncirl.ie/Portals/0/nciLogo.png)
-
 
 # Harry's Bar Interactive Cocktail Menu 
 
